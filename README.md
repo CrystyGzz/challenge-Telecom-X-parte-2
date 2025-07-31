@@ -78,7 +78,7 @@ La interpretación del modelo de Regresión Logística nos permitió identificar
 | **Cargos_Totales** | +0.68 (Positivo)        | A **mayor cargo total** (acumulado), mayor probabilidad de Churn. Esto es crucial y puede indicar insatisfacción de valor. |
 | **Servicio_Internet_Fiber optic** | +0.57 (Positivo)        | Los clientes con **fibra óptica** tienen mayor probabilidad de Churn. Posibles problemas de servicio o altas expectativas. |
 | Facturacion_Electronica             | +0.38 (Positivo)        | Los clientes con facturación electrónica son más propensos a rotar.                                        |
-
+[Importancia de Características](visualizations/feature_importance.png)
 ---
 
 ## 💡 Recomendaciones Estratégicas
