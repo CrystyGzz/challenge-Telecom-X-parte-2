@@ -32,6 +32,28 @@ El proceso incluyó:
 * **Modelado Predictivo:** Entrenamiento y evaluación de modelos de clasificación (Regresión Logística y Random Forest).
 * **Interpretación de Resultados:** Identificación de los factores más influyentes en el Churn para informar decisiones de negocio.
 
+## 📊 Análisis y Modelado
+
+El análisis se realizó en un conjunto de datos de clientes de telecomunicaciones, el cual contenía información demográfica, servicios contratados, información de facturación y el estado de Churn.
+
+### Fases del Análisis:
+
+1.  **Carga y Limpieza:** Se cargaron los datos desde una URL, se aplanaron las columnas con estructuras de diccionario y se trató el problema de los valores nulos en `TotalCharges` (rellenándolos con 0). Un paso crítico fue la **limpieza de valores vacíos en la variable objetivo `Churn`**, asegurando que solo contenga `0` (No Churn) y `1` (Churn).
+2.  **Ingeniería y Transformación de Características:** Se creó la columna `Cuentas_Diarias` y se estandarizaron todas las columnas binarias a `0` y `1`. Las variables categóricas (`Servicio_Internet`, `Tipo_Contrato`, `Metodo_Pago`) se convirtieron utilizando **One-Hot Encoding** y las variables numéricas se **escalaron** con `StandardScaler` para preparar los datos para el modelado.
+3.  **Modelado Predictivo:** Entrenamiento y evaluación de modelos de clasificación (Regresión Logística y Random Forest). Los datos se dividieron en conjuntos de entrenamiento (80%) y prueba (20%), estratificando por la variable objetivo `Churn` para mantener la proporción de clases.
+
+### Visualizaciones Clave del EDA:
+
+Aquí se muestra la distribución de la variable objetivo Churn y algunas características categóricas importantes.
+
+![Distribución de Clientes por Churn](distribución_de_la_rotación.png)
+*Distribución de la variable objetivo 'Churn', mostrando el desbalance de clases.*
+
+---
+
+## ✅ Resultados Clave
+
+La evaluación de los modelos se centró en métricas clave para problemas de clasificación desbalanceados...
 ---
 
 ## 📊 Análisis y Modelado
@@ -64,7 +86,17 @@ La evaluación de los modelos se centró en métricas clave para problemas de cl
 
 ## 🎯 Factores Clave del Churn
 
-La interpretación del modelo de Regresión Logística nos permitió identificar las variables con mayor influencia en la probabilidad de Churn:
+La interpretación del modelo de Regresión Logística y el análisis de importancia de características del Random Forest nos permitieron identificar las variables con mayor influencia en la probabilidad de Churn:
+
+### Importancia de Características (Random Forest):
+Las características se ordenan por su contribución al modelo, indicando su poder predictivo.
+![Importancia de Características (Random Forest)](visualizations/característica_importancia.png)
+*Gráfico de barras mostrando la importancia de las variables en el modelo Random Forest.*
+
+### Coeficientes de la Regresión Logística (Influencia y Dirección):
+Los coeficientes revelan la dirección (+/-) y la magnitud de la relación de cada característica con la probabilidad de Churn.
+![Coeficientes de Regresión Logística](visualizations/coeficientes_logísticos.png)
+*Gráfico de barras mostrando la influencia y dirección de las variables en el modelo de Regresión Logística.*
 
 | Característica                        | Coeficiente (Dirección) | Impacto                                                                                                    |
 | :------------------------------------ | :---------------------- | :--------------------------------------------------------------------------------------------------------- |
@@ -79,6 +111,7 @@ La interpretación del modelo de Regresión Logística nos permitió identificar
 | **Servicio_Internet_Fiber optic** | +0.57 (Positivo)        | Los clientes con **fibra óptica** tienen mayor probabilidad de Churn. Posibles problemas de servicio o altas expectativas. |
 | Facturacion_Electronica             | +0.38 (Positivo)        | Los clientes con facturación electrónica son más propensos a rotar.                                        |
 
+---
 ---
 
 ## 💡 Recomendaciones Estratégicas
