@@ -46,7 +46,7 @@ El análisis se realizó en un conjunto de datos de clientes de telecomunicacion
 
 Aquí se muestra la distribución de la variable objetivo Churn y algunas características categóricas importantes.
 
-![Distribución de Clientes por Churn](distribución_de_la_rotación.png)
+![Distribución de Clientes por Churn](visualizaciones/distribución_de_la_rotación.png)
 *Distribución de la variable objetivo 'Churn', mostrando el desbalance de clases.*
 
 ---
@@ -90,12 +90,12 @@ La interpretación del modelo de Regresión Logística y el análisis de importa
 
 ### Importancia de Características (Random Forest):
 Las características se ordenan por su contribución al modelo, indicando su poder predictivo.
-![Importancia de Características (Random Forest)](visualizations/característica_importancia.png)
+![Importancia de Características (Random Forest)](visualizaciones/característica_importancia.png)
 *Gráfico de barras mostrando la importancia de las variables en el modelo Random Forest.*
 
 ### Coeficientes de la Regresión Logística (Influencia y Dirección):
 Los coeficientes revelan la dirección (+/-) y la magnitud de la relación de cada característica con la probabilidad de Churn.
-![Coeficientes de Regresión Logística](visualizations/coeficientes_logísticos.png)
+![Coeficientes de Regresión Logística](visualizaciones/coeficientes_logísticos.png)
 *Gráfico de barras mostrando la influencia y dirección de las variables en el modelo de Regresión Logística.*
 
 | Característica                        | Coeficiente (Dirección) | Impacto                                                                                                    |
